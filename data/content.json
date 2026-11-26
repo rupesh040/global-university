@@ -1,0 +1,721 @@
+{
+  "UnipixUniversity": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Header": "UnipixHeader1",
+          "Footer": "UnipixFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Hero",
+                "component": "UnipixHero1"
+              },
+              {
+                "key": "About",
+                "component": "UnipixAbout1"
+              },
+              {
+                "key": "Stats",
+                "component": "UnipixStats1"
+              },
+              {
+                "key": "Academics",
+                "component": "UnipixAcademics1"
+              },
+              {
+                "key": "CampusLife",
+                "component": "UnipixCampusLife1"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "UnipixWhyChooseUs1"
+              },
+              {
+                "key": "Testimonial",
+                "component": "UnipixTestimonial1"
+              },
+              {
+                "key": "FAQ",
+                "component": "UnipixFAQ1"
+              },
+              {
+                "key": "Contact",
+                "component": "UnipixContact1"
+              },
+              {
+                "key": "Footer",
+                "component": "UnipixFooter1"
+              }
+            ]
+          },
+          "about-us": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "UnipixPageBanner1"
+              },
+              {
+                "key": "About",
+                "component": "UnipixAbout1"
+              }
+            ]
+          },
+          "academics": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "UnipixPageBanner1"
+              },
+              {
+                "key": "AcademicsListing",
+                "component": "UnipixAcademics1"
+              }
+            ]
+          },
+          "events": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "UnipixPageBanner1"
+              },
+              {
+                "key": "EventListing",
+                "component": "UnipixEvents1"
+              }
+            ]
+          },
+          "testimonials": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "UnipixPageBanner1"
+              },
+              {
+                "key": "Testimonial",
+                "component": "UnipixTestimonial1"
+              }
+            ]
+          },
+          "contact": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "UnipixPageBanner1"
+              },
+              {
+                "key": "ContactDetails",
+                "component": "UnipixContact1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Header": {
+        "variants": {
+          "UnipixHeader1": {
+            "logo": "/logo.webp",
+            "logoAlt": "Global UNIVERSITY Logo",
+            "links": [
+              {
+                "name": "Home",
+                "href": "#home",
+                "active": true
+              },
+              {
+                "name": "About",
+                "href": "#about",
+                "active": false
+              },
+              {
+                "name": "Academics",
+                "href": "#academics",
+                "active": false
+              },
+              {
+                "name": "Gallery",
+                "href": "#campus-life",
+                "active": false
+              },
+              {
+                "name": "Feedback",
+                "href": "#testimonial",
+                "active": false
+              },
+              {
+                "name": "FAQ",
+                "href": "#faq",
+                "active": false
+              }
+            ],
+            "searchPlaceholder": "Search programs, courses, faculty...",
+            "language": {
+              "current": "ENG",
+              "options": [
+                "ENG",
+                "ESP",
+                "FRA",
+                "DEU"
+              ]
+            },
+            "contact": {
+              "phone": "+1 000-000-000",
+              "email": "info@xyz.com",
+              "address": "450 University Ave, Cambridge, MA 02138",
+              "officeHours": "Mon - Fri: 8:00 AM - 6:00 PM"
+            },
+            "button": "Contact us",
+            "buttonHref": "#contact"
+          }
+        }
+      },
+      "Hero": {
+        "variants": {
+          "UnipixHero1": {
+            "tagline": "knowledge meets innovation",
+            "taglineIcon": "sparkle",
+            "heading": "Unleashing Potential Fostering Excellence",
+            "headingLines": [
+              "Unleashing Potential",
+              "Fostering Excellence"
+            ],
+            "description": "Global University prepares students for extraordinary careers through world-class academic programs, transformative research, and vibrant community life.",
+            "backgroundImage": "/hero.webp",
+            "backgroundImageAlt": "Global University graduates tossing graduation caps in celebration",
+            "ctaButton": {
+              "text": "View Our Program",
+              "href": "#academics"
+            },
+            "degreeLinks": [
+              {
+                "id": "undergraduate",
+                "title": "Undergraduate",
+                "description": "Browse the undergraduate degrees",
+                "href": "#academics"
+              },
+              {
+                "id": "graduate",
+                "title": "Graduate",
+                "description": "Browse the Graduate degrees",
+                "href": "#academics"
+              }
+            ]
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "UnipixAbout1": {
+            "tagline": "knowledge meets innovation",
+            "taglineIcon": "graduation-cap",
+            "heading": "About University",
+            "paragraphs": [
+              "At Global University, we believe in the transformative power of education and the boundless potential that resides within each individual.",
+              "Our mission is to foster intellectual curiosity, empower individuals to realize their fullest potential, and contribute meaningfully to the betterment of society. commitment to academic excellence, diversity, and community engagement."
+            ],
+            "primaryImage": "/about-1.webp",
+            "primaryImageAlt": "Global University campus historic building and grounds",
+            "secondaryImage": "/about-2.webp",
+            "secondaryImageAlt": "Global University graduates standing in academic gowns",
+            "badge": {
+              "text": "Explore Full Global University • Estd. 1971 •",
+              "year": "1971",
+              "href": "#campus"
+            },
+            "features": [
+              {
+                "id": "mission",
+                "icon": "graduation-cap",
+                "title": "University Mission",
+                "subtitle": "Statement",
+                "href": "#mission"
+              },
+              {
+                "id": "vision",
+                "icon": "landmark",
+                "title": "University Vision",
+                "subtitle": "Achievement",
+                "href": "#vision"
+              }
+            ],
+            "ctaButton": {
+              "text": "View Our Program",
+              "href": "#programs"
+            },
+            "stats": [
+              {
+                "value": "120+",
+                "label": "Degree Programs"
+              },
+              {
+                "value": "25K+",
+                "label": "Active Students"
+              },
+              {
+                "value": "96%",
+                "label": "Graduate Employment"
+              },
+              {
+                "value": "40+",
+                "label": "International Campuses"
+              }
+            ]
+          }
+        }
+      },
+      "Stats": {
+        "variants": {
+          "UnipixStats1": {
+            "items": [
+              {
+                "id": "success-rate",
+                "value": "90%",
+                "lines": [
+                  "Post-Graduation",
+                  "Success Rate"
+                ]
+              },
+              {
+                "id": "top-colleges",
+                "value": "Top 10",
+                "lines": [
+                  "Colleges That Create",
+                  "Futures"
+                ]
+              },
+              {
+                "id": "materials-rd",
+                "value": "No. 1",
+                "lines": [
+                  "In The Nation For",
+                  "Materials R&D"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Academics": {
+        "variants": {
+          "UnipixAcademics1": {
+            "tagline": "Academic Pathways",
+            "heading": "Academics & Program",
+            "description": "Explore comprehensive degree tracks and educational pathways tailored for academic rigor and career success.",
+            "categories": [
+              {
+                "id": "undergraduate",
+                "title": "Undergraduate",
+                "isFeatured": false,
+                "programs": [
+                  {
+                    "id": "ug-lit",
+                    "name": "American Literature",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "ug-writing",
+                    "name": "Creative Writing",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "ug-astro",
+                    "name": "Astrophysics",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "ug-bme",
+                    "name": "Biomedical Engineering",
+                    "href": "#programs"
+                  }
+                ]
+              },
+              {
+                "id": "graduate",
+                "title": "Graduate",
+                "isFeatured": true,
+                "programs": [
+                  {
+                    "id": "grad-lit",
+                    "name": "American Literature",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "grad-writing",
+                    "name": "Creative Writing",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "grad-health",
+                    "name": "Applied Health",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "grad-english",
+                    "name": "Minor in English",
+                    "href": "#programs"
+                  }
+                ]
+              },
+              {
+                "id": "lifelong-learning",
+                "title": "Lifelong Learning",
+                "isFeatured": false,
+                "programs": [
+                  {
+                    "id": "ll-ba",
+                    "name": "Bachelor of Arts (B.A.)",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "ll-ma",
+                    "name": "Master of Arts (M.A.)",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "ll-phd",
+                    "name": "Doctor of Philosophy",
+                    "href": "#programs"
+                  },
+                  {
+                    "id": "ll-wellness",
+                    "name": "Health and Wellness",
+                    "href": "#programs"
+                  }
+                ]
+              }
+            ],
+            "items": [
+              {
+                "id": "1",
+                "title": "Computer Science & Artificial Intelligence",
+                "image": "/campus-1.webp",
+                "href": "#academics",
+                "isFeatured": false
+              },
+              {
+                "id": "2",
+                "title": "Business Administration & Finance",
+                "image": "/campus-2.webp",
+                "href": "#academics",
+                "isFeatured": false
+              },
+              {
+                "id": "3",
+                "title": "Biomedical Engineering & Health Sciences",
+                "image": "/campus-3.webp",
+                "href": "#academics",
+                "isFeatured": false
+              },
+              {
+                "id": "4",
+                "title": "Arts, Humanities & Global Cultures",
+                "image": "/about-1.webp",
+                "href": "#academics",
+                "isFeatured": false
+              },
+              {
+                "id": "5",
+                "title": "Environmental Science & Sustainability",
+                "image": "/hero.webp",
+                "href": "#academics",
+                "isFeatured": false
+              }
+            ]
+          }
+        }
+      },
+      "CampusLife": {
+        "variants": {
+          "UnipixCampusLife1": {
+            "headingLines": [
+              "Campus",
+              "Life"
+            ],
+            "description": "building a vibrant community of creative and accomplished people from around the world.",
+            "cards": [
+              {
+                "id": "student-life",
+                "title": "Student Life",
+                "image": "/campus-1.webp",
+                "imageAlt": "Student relaxing on university campus steps",
+                "href": "#student-life"
+              },
+              {
+                "id": "arts-culture",
+                "title": "Arts & Culture",
+                "image": "/campus-2.webp",
+                "imageAlt": "Students collaborating in the creative arts studio",
+                "href": "#arts-culture"
+              },
+              {
+                "id": "recreation-wellness",
+                "title": "Recreation & Wellness",
+                "image": "/campus-3.webp",
+                "imageAlt": "Students gathering on the university athletic courts",
+                "href": "#recreation-wellness"
+              }
+            ]
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "UnipixWhyChooseUs1": {
+            "tagline": "WHY CHOOSE Global",
+            "headingPart1": "Your Gateway to",
+            "headingPart2": "Global Academic",
+            "headingHighlight": "Leadership",
+            "description": "We foster a high-impact learning culture backed by accredited degree tracks, cutting-edge campus facilities, and extensive alumni networks.",
+            "image": "/campus-2.webp",
+            "features": [
+              {
+                "title": "Accredited Excellence",
+                "description": "Globally recognized programs meeting rigorous academic standards.",
+                "icon": "shield"
+              },
+              {
+                "title": "Distinguished Mentors",
+                "description": "Renowned researchers committed to student advancement.",
+                "icon": "graduation"
+              },
+              {
+                "title": "Modern Campus Labs",
+                "description": "Advanced tech hubs, modern libraries, and creative studios.",
+                "icon": "building"
+              },
+              {
+                "title": "Global Alumni Network",
+                "description": "Lifelong networking with leaders across 90+ countries.",
+                "icon": "globe"
+              }
+            ],
+            "overlayCard": {
+              "title": "Ranked Among Top 50 Global Universities",
+              "description": "Recognized for research citations, international outlook, and student satisfaction."
+            }
+          }
+        }
+      },
+      "Testimonial": {
+        "variants": {
+          "UnipixTestimonial1": {
+            "tagline": "STUDENT FEEDBACK",
+            "heading": "My Students Feedback",
+            "description": "The STEM Exhibition is a great way to explore and discover",
+            "items": [
+              {
+                "id": "1",
+                "name": "Emma Watson",
+                "role": "Developer / Student",
+                "company": "Class of 2024",
+                "image": "/about-2.webp",
+                "imageAlt": "Student Emma Watson",
+                "quote": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+                "rating": 5
+              },
+              {
+                "id": "2",
+                "name": "David Smith",
+                "role": "Business / Student",
+                "company": "Class of 2025",
+                "image": "/about-1.webp",
+                "imageAlt": "Student David Smith",
+                "quote": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+                "rating": 5
+              },
+              {
+                "id": "3",
+                "name": "Samantha Williams",
+                "role": "Student",
+                "company": "Class of 2026",
+                "image": "/hero.webp",
+                "imageAlt": "Student Samantha Williams",
+                "quote": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+                "rating": 5
+              }
+            ]
+          }
+        }
+      },
+      "FAQ": {
+        "variants": {
+          "UnipixFAQ1": {
+            "tagline": "knowledge meets innovation",
+            "heading": "Frequently Asked Questions",
+            "description": "Find clear answers to key questions about admissions, degrees, scholarships, and campus life at Global.",
+            "contactSupport": {
+              "title": "Still Have Questions?",
+              "description": "Our admissions and student guidance counselors are ready to support your educational journey.",
+              "phone": "+1 000-000-000",
+              "email": "info@xyz.com",
+              "buttonText": "Contact Admissions",
+              "buttonHref": "#contact"
+            },
+            "items": [
+              {
+                "id": "1",
+                "number": "01",
+                "question": "How do I apply for undergraduate or graduate admissions at Global?",
+                "answer": "Applications can be submitted directly online through our digital portal. You will need official academic transcripts, letters of recommendation, and a personal statement outlining your academic goals.",
+                "category": "Admissions"
+              },
+              {
+                "id": "2",
+                "number": "02",
+                "question": "What financial aid and scholarship opportunities are available?",
+                "answer": "Global University awards both merit-based academic scholarships and need-based tuition grants. Over 85% of incoming scholars receive institutional financial assistance upon application review.",
+                "category": "Financial Aid"
+              },
+              {
+                "id": "3",
+                "number": "03",
+                "question": "Can international students participate in global study exchange programs?",
+                "answer": "Yes! Global maintains active exchange partnerships with renowned universities in over 30 countries worldwide. International students can participate in semester-abroad or summer immersion tracks.",
+                "category": "Global Exchange"
+              },
+              {
+                "id": "4",
+                "number": "04",
+                "question": "What campus housing and residential accommodation options exist?",
+                "answer": "We offer contemporary on-campus residence halls, suite-style dorms for upperclassmen, and quiet graduate apartments complete with high-speed internet, collaborative study spaces, and dining plans.",
+                "category": "Campus Life"
+              },
+              {
+                "id": "5",
+                "number": "05",
+                "question": "How can I schedule an official in-person or virtual campus tour?",
+                "answer": "Campus tours run weekly from Monday through Saturday. You can book an appointment online or contact our admissions office directly at +1 000-000-000 or via email at info@xyz.com.",
+                "category": "Campus Visits"
+              }
+            ]
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "UnipixContact1": {
+            "tagline": "knowledge meets innovation",
+            "heading": "Get In Touch With Global University",
+            "description": "Whether you are applying for admission, booking a campus tour, or inquiring about research collaborations, our admissions team is here to assist.",
+            "cardTitle": "Admissions & Campus Office",
+            "cardDescription": "Reach out to our dedicated team for guidance on degree programs, scholarships, and international admissions.",
+            "campusImage": "/campus-1.webp",
+            "campusImageAlt": "Global University main admissions campus building",
+            "officeHoursLabel": "Office Hours",
+            "officeHours": "Mon - Fri: 8:00 AM - 6:00 PM",
+            "infoItems": [
+              {
+                "icon": "map-pin",
+                "title": "Campus Address",
+                "detail": "450 University Ave, Cambridge, MA 02138",
+                "href": "https://maps.google.com"
+              },
+              {
+                "icon": "mail",
+                "title": "Email Admissions",
+                "detail": "info@xyz.com",
+                "href": "mailto:info@xyz.com"
+              },
+              {
+                "icon": "phone",
+                "title": "Call Office",
+                "detail": "+1 000-000-000",
+                "href": "tel:+1000000000"
+              }
+            ],
+            "formTitle": "Send Us an Inquiry",
+            "formSubtitle": "Fill out the form below and an admissions advisor will respond promptly.",
+            "formButtonText": "Submit Inquiry",
+            "formFields": {
+              "nameLabel": "Full Name",
+              "namePlaceholder": "Enter your full name",
+              "emailLabel": "Email Address",
+              "emailPlaceholder": "info@xyz.com",
+              "phoneLabel": "Phone Number",
+              "phonePlaceholder": "+1 000-000-000",
+              "inquiryLabel": "Inquiry Type",
+              "messageLabel": "Your Message",
+              "messagePlaceholder": "Tell us about your program interest or questions..."
+            },
+            "inquiryOptions": [
+              "General Admissions Inquiry",
+              "Undergraduate Studies",
+              "Graduate & PhD Applications",
+              "Campus Tour & Visit",
+              "Scholarships & Financial Aid",
+              "International Student Office"
+            ],
+            "successState": {
+              "title": "Inquiry Submitted Successfully",
+              "message": "Thank you for contacting Global University. Our admissions team will respond to you shortly.",
+              "resetButtonText": "Send Another Inquiry"
+            }
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "UnipixFooter1": {
+            "logo": "/logo.webp",
+            "logoAlt": "Global UNIVERSITY Logo",
+            "backgroundImage": "/campus-1.webp",
+            "description": "We are passionate education dedicated to providing high-quality resources all learners.",
+            "newsletter": {
+              "title": "Subscribe To Newsletter",
+              "placeholder": "Enter Your mail",
+              "buttonText": "Send Now",
+              "successMessage": "Thank you for subscribing to Global University updates."
+            },
+            "columns": [
+              {
+                "id": "quick-links",
+                "title": "Quick Links",
+                "links": [
+                  { "name": "Home", "href": "#home" },
+                  { "name": "About University", "href": "#about" },
+                  { "name": "Academics & Program", "href": "#academics" },
+                  { "name": "Campus Life", "href": "#campus-life" },
+                  { "name": "Student Feedback", "href": "#testimonial" },
+                  { "name": "FAQ", "href": "#faq" },
+                  { "name": "Contact Us", "href": "#contact" }
+                ]
+              },
+              {
+                "id": "programs",
+                "title": "Programs",
+                "links": [
+                  { "name": "Undergraduate", "href": "#academics" },
+                  { "name": "Graduate", "href": "#academics" },
+                  { "name": "Lifelong Learning", "href": "#academics" },
+                  { "name": "American Literature", "href": "#academics" },
+                  { "name": "Biomedical Engineering", "href": "#academics" },
+                  { "name": "Applied Health", "href": "#academics" }
+                ]
+              }
+            ],
+            "contact": {
+              "email": "info@xyz.com",
+              "phone": "+1 000-000-000",
+              "address": "450 University Ave, Cambridge, MA 02138"
+            },
+            "socialLinks": [
+              { "name": "LinkedIn", "icon": "linkedin", "href": "https://linkedin.com" },
+              { "name": "Facebook", "icon": "facebook", "href": "https://facebook.com" },
+              { "name": "Twitter", "icon": "x", "href": "https://x.com" },
+              { "name": "Instagram", "icon": "instagram", "href": "https://instagram.com" },
+              { "name": "YouTube", "icon": "youtube", "href": "https://youtube.com" }
+            ],
+            "copyrightPrefix": "Copyright © 2026 All Rights Reserved by",
+            "copyrightBrand": "Global",
+            "copyright": "Copyright © 2026 All Rights Reserved by Global",
+            "scrollToTopLabel": "Scroll back to top"
+          }
+        }
+      }
+    }
+  }
+}
