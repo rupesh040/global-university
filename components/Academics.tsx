@@ -131,7 +131,7 @@ export default function Academics({ data }: AcademicsProps) {
                   </span>
                 </h3>
 
-                <div className="flex flex-col items-start space-y-3.5">
+                <div className="flex flex-col items-stretch space-y-3.5">
                   {category.programs.map((program, progIndex) => (
                     <div
                       key={program.id}
@@ -145,7 +145,7 @@ export default function Academics({ data }: AcademicsProps) {
                     >
                       <Link
                         href={program.href}
-                        className={`group relative inline-flex items-center gap-3 overflow-hidden rounded-xs border px-5 py-3 text-xs font-normal transition-colors duration-500 motion-reduce:transition-none sm:text-sm ${
+                        className={`group relative flex min-h-12 w-full items-center justify-between gap-3 overflow-hidden rounded-xs border px-5 py-3 text-xs font-normal transition-colors duration-500 motion-reduce:transition-none sm:text-sm ${
                           isFeatured
                             ? "border-white/40 text-white hover:border-white hover:text-[#7a102f]"
                             : "border-gray-400/80 text-gray-800 hover:border-[#7a102f] hover:text-white"
@@ -157,10 +157,10 @@ export default function Academics({ data }: AcademicsProps) {
                             isFeatured ? "bg-white" : "bg-[#7a102f]"
                           }`}
                         />
-                        <span className="relative leading-none">{program.name}</span>
+                        <span className="relative leading-snug">{program.name}</span>
                         <ArrowRight
                           size={14}
-                          className="relative transition-transform duration-300 group-hover:translate-x-1"
+                          className="relative flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1"
                         />
                       </Link>
                     </div>
