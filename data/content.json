@@ -709,9 +709,9 @@
               { "name": "Instagram", "icon": "instagram", "href": "https://instagram.com" },
               { "name": "YouTube", "icon": "youtube", "href": "https://youtube.com" }
             ],
-            "copyrightPrefix": "Copyright © 2026 All Rights Reserved by",
-            "copyrightBrand": "Global",
-            "copyright": "Copyright © 2026 All Rights Reserved by Global",
+            "copyrightPrefix": "Copyright © 2026 All Rights Reserved by Global University.",
+            "copyrightBrand": " Powered by Lestow",
+            "copyright": "Copyright © 2026 All Rights Reserved by Global University Powered by Lestow",
             "scrollToTopLabel": "Scroll back to top"
           }
         }
