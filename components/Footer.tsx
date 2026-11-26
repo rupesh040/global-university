@@ -18,16 +18,92 @@ interface FooterProps {
   data?: FooterVariant;
 }
 
+type SocialName = "facebook" | "x" | "instagram" | "linkedin" | "youtube";
+
+interface SocialItem {
+  id: string;
+  name: SocialName;
+  label: string;
+  href: string;
+}
+
 const OUT = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 const SPRING = "ease-[cubic-bezier(0.34,1.56,0.64,1)]";
+
+const DEFAULT_SOCIALS: SocialItem[] = [
+  { id: "facebook", name: "facebook", label: "Facebook", href: "https://www.facebook.com" },
+  { id: "x", name: "x", label: "X", href: "https://x.com" },
+  { id: "instagram", name: "instagram", label: "Instagram", href: "https://www.instagram.com" },
+  { id: "linkedin", name: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com" },
+  { id: "youtube", name: "youtube", label: "YouTube", href: "https://www.youtube.com" }
+];
 
 const wait = (on: boolean, ms: number) => ({
   transitionDelay: on ? `${ms}ms` : "0ms"
 });
 
+function SocialIcon({ name }: { name: SocialName }) {
+  const common = {
+    width: 18,
+    height: 18,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true
+  };
+
+  switch (name) {
+    case "facebook":
+      return (
+        <svg {...common}>
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+      );
+    case "x":
+      return (
+        <svg {...common}>
+          <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+          <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+        </svg>
+      );
+    case "instagram":
+      return (
+        <svg {...common}>
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+        </svg>
+      );
+    case "linkedin":
+      return (
+        <svg {...common}>
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+          <rect width="4" height="12" x="2" y="9" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+      );
+    case "youtube":
+      return (
+        <svg {...common}>
+          <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+          <path d="m10 15 5-3-5-3z" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export default function Footer({ data }: FooterProps) {
   const footerData: FooterVariant =
     data || contentData.UnipixUniversity.sections.Footer.variants.UnipixFooter1;
+
+  const socials =
+    (footerData as FooterVariant & { socials?: SocialItem[] }).socials ??
+    DEFAULT_SOCIALS;
 
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
@@ -117,9 +193,9 @@ export default function Footer({ data }: FooterProps) {
           style={wait(inView, 200)}
         />
 
-        <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-10 sm:py-12 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-10 sm:py-12 flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
           <h2
-            className={`font-serif text-2xl sm:text-3xl md:text-[36px] font-normal text-white tracking-tight ${rise(
+            className={`text-balance font-serif text-2xl sm:text-3xl md:text-[36px] font-normal leading-tight text-white tracking-tight ${rise(
               inView
             )}`}
             style={wait(inView, 100)}
@@ -148,16 +224,18 @@ export default function Footer({ data }: FooterProps) {
             ) : (
               <form
                 onSubmit={handleSubscribe}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6"
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 sm:gap-6"
               >
-                <div className="group/field relative sm:w-64 lg:w-72">
+                <div className="group/field relative w-full sm:w-64 lg:w-72">
                   <input
                     type="email"
                     required
+                    inputMode="email"
+                    autoComplete="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={footerData.newsletter.placeholder}
-                    className="w-full bg-transparent text-white placeholder:text-gray-400 text-sm py-3 px-1 focus:outline-none"
+                    className="w-full bg-transparent text-white placeholder:text-gray-400 text-base sm:text-sm py-3 px-1 focus:outline-none"
                   />
                   <span className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white/20" />
                   <span className="pointer-events-none absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-white transition-transform duration-500 ease-out group-focus-within/field:scale-x-100 motion-reduce:transition-none" />
@@ -165,7 +243,7 @@ export default function Footer({ data }: FooterProps) {
 
                 <button
                   type="submit"
-                  className="group relative overflow-hidden inline-flex items-center justify-center gap-2.5 bg-white text-gray-900 hover:text-white px-7 py-3.5 text-sm font-medium rounded-xs shadow-sm hover:shadow-lg transition-[color,box-shadow] duration-300 cursor-pointer"
+                  className="group relative overflow-hidden inline-flex items-center justify-center gap-2.5 bg-white text-gray-900 hover:text-white px-7 py-3.5 text-sm font-medium rounded-xs shadow-sm hover:shadow-lg transition-[color,box-shadow] duration-300 cursor-pointer active:scale-[0.98]"
                 >
                   <span className="absolute inset-0 bg-[#7a102f] origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none" />
                   <span className="relative">{footerData.newsletter.buttonText}</span>
@@ -180,15 +258,15 @@ export default function Footer({ data }: FooterProps) {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-18">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
-          <div className="lg:col-span-6 space-y-5">
+      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-12 sm:py-18">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-12 lg:gap-8">
+          <div className="col-span-2 space-y-5 lg:col-span-6">
             <div className={rise(inView)} style={wait(inView, 150)}>
               <Link
                 href="/"
                 className="inline-block transition-transform duration-300 hover:scale-[1.02]"
               >
-                <div className="relative h-16 w-60 overflow-hidden">
+                <div className="relative h-14 w-52 overflow-hidden sm:h-16 sm:w-60">
                   <Image
                     src={footerData.logo}
                     alt={footerData.logoAlt}
@@ -201,7 +279,7 @@ export default function Footer({ data }: FooterProps) {
             </div>
 
             <p
-              className={`text-sm text-gray-400 font-light leading-relaxed max-w-xs ${rise(
+              className={`text-sm text-gray-400 font-light leading-relaxed max-w-sm sm:max-w-xs ${rise(
                 inView
               )}`}
               style={wait(inView, 250)}
@@ -216,52 +294,81 @@ export default function Footer({ data }: FooterProps) {
                     size={16}
                     className="text-gray-300 flex-shrink-0 mt-0.5"
                   />
-                  <span className="font-light">{footerData.contact.address}</span>
+                  <span className="min-w-0 font-light">{footerData.contact.address}</span>
                 </div>
               </div>
 
               <div className={slide(inView)} style={wait(inView, 440)}>
                 <a
                   href={`tel:${footerData.contact.phone}`}
-                  className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors duration-200 group"
+                  className="flex items-center gap-2.5 py-1 text-gray-400 hover:text-white transition-colors duration-200 group"
                 >
                   <Phone
                     size={15}
                     className="text-gray-300 group-hover:text-rose-300 flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                   />
-                  <span className="font-light">{footerData.contact.phone}</span>
+                  <span className="min-w-0 font-light">{footerData.contact.phone}</span>
                 </a>
               </div>
 
               <div className={slide(inView)} style={wait(inView, 530)}>
                 <a
                   href={`mailto:${footerData.contact.email}`}
-                  className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors duration-200 group"
+                  className="flex items-center gap-2.5 py-1 text-gray-400 hover:text-white transition-colors duration-200 group"
                 >
                   <Mail
                     size={15}
                     className="text-gray-300 group-hover:text-rose-300 flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                   />
-                  <span className="font-light">{footerData.contact.email}</span>
+                  <span className="min-w-0 break-words font-light">
+                    {footerData.contact.email}
+                  </span>
                 </a>
               </div>
             </div>
+
+            {socials.length > 0 && (
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                {socials.map((social, idx) => (
+                  <div
+                    key={social.id}
+                    className={`transition-[opacity,scale] duration-700 motion-reduce:transition-none ${SPRING} ${
+                      inView ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                    }`}
+                    style={wait(inView, 620 + idx * 80)}
+                  >
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="group/social relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/15 text-gray-300 transition-colors duration-300 hover:border-[#7a102f] hover:text-white focus-visible:border-[#7a102f] focus-visible:text-white focus-visible:outline-none active:scale-95"
+                    >
+                      <span className="absolute inset-0 origin-bottom scale-y-0 bg-[#7a102f] transition-transform duration-500 ease-out group-hover/social:scale-y-100 group-focus-visible/social:scale-y-100 motion-reduce:transition-none" />
+                      <span className="relative transition-transform duration-300 group-hover/social:-translate-y-0.5">
+                        <SocialIcon name={social.name} />
+                      </span>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {footerData.columns.map((column, colIdx) => {
             const base = 250 + colIdx * 100;
 
             return (
-              <div key={column.id} className={columnSpan}>
+              <div key={column.id} className={`min-w-0 ${columnSpan}`}>
                 <h3
-                  className={`font-serif text-lg sm:text-xl font-normal text-white mb-6 ${rise(
+                  className={`font-serif text-lg sm:text-xl font-normal text-white mb-4 sm:mb-6 ${rise(
                     inView
                   )}`}
                   style={wait(inView, base)}
                 >
                   {column.title}
                 </h3>
-                <ul className="space-y-3.5">
+                <ul className="space-y-1.5 sm:space-y-3.5">
                   {column.links.map((link, linkIdx) => (
                     <li
                       key={link.name}
@@ -271,10 +378,10 @@ export default function Footer({ data }: FooterProps) {
                       <Link
                         href={link.href}
                         onClick={(e) => handleLinkClick(e, link.href)}
-                        className="group/link relative text-sm text-gray-400 hover:text-white font-light inline-block transition-all duration-300 hover:translate-x-1"
+                        className="group/link relative text-sm text-gray-400 hover:text-white font-light inline-block py-1.5 sm:py-0 transition-all duration-300 hover:translate-x-1"
                       >
                         {link.name}
-                        <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-rose-300/70 transition-transform duration-300 ease-out group-hover/link:scale-x-100 motion-reduce:transition-none" />
+                        <span className="absolute bottom-0.5 sm:-bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-rose-300/70 transition-transform duration-300 ease-out group-hover/link:scale-x-100 motion-reduce:transition-none" />
                       </Link>
                     </li>
                   ))}
@@ -291,19 +398,7 @@ export default function Footer({ data }: FooterProps) {
           style={wait(inView, 400)}
         />
 
-        <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-6 flex items-center justify-center relative">
-          <p
-            className={`text-xs sm:text-sm text-gray-400 font-light text-center ${rise(
-              inView
-            )}`}
-            style={wait(inView, 700)}
-          >
-            {footerData.copyrightPrefix}{" "}
-            <span className="text-white font-normal">
-              {footerData.copyrightBrand}
-            </span>
-          </p>
-
+        <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 pt-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] sm:pb-6 flex items-center justify-center relative">
           <div
             className={`absolute right-5 sm:right-8 lg:right-12 -top-5 sm:top-1/2 sm:-translate-y-1/2 transition-[opacity,scale] duration-700 motion-reduce:transition-none ${SPRING} ${
               inView ? "scale-100 opacity-100" : "scale-0 opacity-0"
@@ -314,7 +409,7 @@ export default function Footer({ data }: FooterProps) {
               type="button"
               onClick={scrollToTop}
               aria-label={footerData.scrollToTopLabel}
-              className="group relative overflow-hidden w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#800020] hover:bg-[#9c1637] text-white shadow-lg hover:shadow-xl transition-[background-color,box-shadow,scale] duration-300 hover:scale-110 cursor-pointer"
+              className="group relative overflow-hidden w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#800020] hover:bg-[#9c1637] text-white shadow-lg hover:shadow-xl transition-[background-color,box-shadow,scale] duration-300 hover:scale-110 active:scale-95 cursor-pointer"
             >
               <span
                 className={`absolute inset-0 flex items-center justify-center transition-transform duration-500 motion-reduce:transition-none ${OUT} group-hover:-translate-y-full`}
@@ -329,6 +424,18 @@ export default function Footer({ data }: FooterProps) {
               </span>
             </button>
           </div>
+
+          <p
+            className={`text-xs sm:text-sm text-gray-400 font-light text-center ${rise(
+              inView
+            )}`}
+            style={wait(inView, 700)}
+          >
+            {footerData.copyrightPrefix}{" "}
+            <span className="text-white font-normal">
+              {footerData.copyrightBrand}
+            </span>
+          </p>
         </div>
       </div>
     </footer>
